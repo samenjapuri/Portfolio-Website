@@ -24,7 +24,7 @@ body {
 	font-optical-sizing: auto;
 	font-style: normal;
 	font-size: 18px;
-	padding-bottom:300px;
+	padding-bottom:20px;
 }
 
 a {
@@ -46,7 +46,7 @@ header {
 
 	.logo-holder {
 		display:flex;
-		padding:10px;
+		padding:0px;
 		align-items:center;
 		font-weight:600;
 		color: var(--base-800);
@@ -66,6 +66,12 @@ header {
 		.logo-text {
 			flex:1;
 		}
+
+		.h2 span {
+			color: #ffc107;
+			border-bottom: 2px solid #1c7d32;
+			padding-bottom: 6px;
+		  }
 	}
 
 	nav {
@@ -217,22 +223,64 @@ h1 {
 				}
 			}
 		}
+		
 	}
-	.hero-yellow {
-		flex:1;
-		background-color: var(--yellow);
-		border-radius:30px;
-		padding:10px 0px;
-		display:flex;
-		justify-content:center;
-		align-items:flex-end;
-		img {
-			margin-top:-500px;
-			max-width:420px;
-			margin-bottom:-10px;
+	
+
+	@media screen and (max-width: 500px) {
+		.hero-yellow {
+			flex:1;
+			background-color: var(--yellow);
+			border-radius:30px;
+			padding:10px 0px;
+			display:flex;
+			justify-content:center;
+			align-items:flex-end;
+			img {
+				margin-top:-75px;
+				max-width:420px;
+				margin-bottom:-10px;
+			}
 		}
 	}
 }
+
+
+@media screen and (min-width: 501px)  and (max-width: 3900px) {
+	
+	.hero-yellow {
+		flex:1;
+
+		padding:30px 0px;
+		display:flex;
+		justify-content:center;
+		align-items:flex-end;
+		  width: 70%;
+  
+  cursor: pointer;
+		img {
+			margin-top:-429px;
+			max-width:474px;
+			margin-bottom:-24px;
+		}
+	}
+}
+
+
+.home .image {
+	flex: 1 1 40rem;
+
+  }
+  .home .image img {
+	width: 70%;
+	margin-left: 6rem;
+	border-radius: 50%;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+	cursor: pointer;
+  }
+  .home .image img:hover {
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  }
 
 .logos {
 	background-color: var(--base-100);
@@ -327,6 +375,7 @@ h3 {
 	}
 }
 
+
 .work-experience {
 	.jobs {
 		display:flex;
@@ -397,7 +446,7 @@ h3 {
 
 .academic-projects {
     .projects {
-        display: flex;
+        display: column;
         gap: 30px;
         @media (max-width: 1024px) {
             flex-direction: column;
@@ -406,6 +455,7 @@ h3 {
             background-color: var(--blue-100);
             padding: 30px;
             border-radius: 30px;
+			margin: 15px;
             flex: 1;
             h3 {
                 margin-top: 20px;
@@ -462,58 +512,40 @@ h3 {
 }
 
 
-.contact {
-    margin-top: 50px;
-	margin-bottom: 20px;
-}
-
-.contact .section-title {
-    text-align: center;
-    margin-bottom: 30px;
+.contact-info-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .contact-info {
-    background-color: var(--yellow-100);
-    padding: 30px;
-    border-radius: 30px;
-	margin-bottom: 20px;
-	font-size: 24px;
-    float: left; /* Float the containers to the left */
-    margin: 0 20px; /* Adjust the margin to create space between the containers */
+    flex: 1 1 30%; /* This makes each item take up 30% of the container's width, adjusting as needed */
+    box-sizing: border-box;
+    padding: 20px;
+    margin: 10px;
+    background-color: #f9f9f9; /* Optional: Add background color for better visibility */
+    border-radius: 8px; /* Optional: Add border radius for styling */
+    text-align: center;
+	background-color: var(--yellow-100);
 }
 
 .contact i.bx {
 	font-size: 24px;
-
 	border-radius: 50%;
 	padding: 14px;
 	float: justify;
 	background: rgba(0, 0, 0, 0.1);
   }
 
-.contact-info h3 {
-    margin-top: 0;
-    margin-bottom: 10px;
+.social-profiles a {
+    display: inline-block;
+    margin: 10px;
 }
 
-.contact-info p {
-    margin-bottom: 0;
-}
-
-.social-links-contact {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-.social-links-contact a {
-    margin-right: 10px;
-    color: var(--base-800);
-    font-size: 24px;
-}
-
-.social-links-contact a:last-child {
-    margin-right: 0;
+@media (max-width: 768px) {
+    .contact-info {
+        flex: 1 1 100%; /* On smaller screens, each item will take the full width */
+    }
 }
 
 
@@ -533,4 +565,55 @@ h3 {
 
 .copied {
     background-color: #2e7d32; /* Darker green after copying */
+}
+
+
+footer {
+    background-color: white;
+    color: black;
+    padding: 20px 0;
+}
+
+.footer-content {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+	font-weight:600;
+	color: var(--base-800);
+}
+
+.footer-content p {
+    margin: 0;
+}
+
+.footer-content nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-content nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.footer-content nav ul li:last-child {
+    margin-right: 0;
+}
+
+.footer-content nav ul li a {
+    color: black;
+    text-decoration: none;
+}
+
+.footer-content nav ul li a:hover {
+    text-decoration: underline;
+}
+
+
+.footer-divider {
+    border: 1px solid #ccc; /* Grey color */
+    margin-bottom: 20px; /* Adjust as needed */
 }
